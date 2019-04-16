@@ -11,7 +11,8 @@
     function addFile(){//Nome della funzione
         console.log('Dentro Funzione addFile()')
         xhttp.open('GET', 'text.txt', true) //Metodo OPEN serve per accerede alla risorsa; Primo parametro il modo in cui farò la richiesta(GET, POST, HEAD), Secondo parametro è URL di dove si trova il nostro file, terzo parametro un boolenao('True viol dire che sarà asincrona')
-
+        //invio la risorsa risorsa 
+        xhttp.send()
         // Al cambiare dello stato della richiesta(xhttp.onreadystatechange) 
         xhttp.onreadystatechange = function() {
             //se il readyStae di xhttp == 4 e xhttp.status == 200
@@ -21,8 +22,6 @@
                 console.log('Risposta : ' + this.responseText)
             }
         }
-        //invio la richiesta
-        xhttp.send()
     }
     // Al Pulsante gli associo un Evento; come primo paraemetro 'evento click', come secondo paraemtro una callBack
     elButton.addEventListener('click', addFile)

@@ -6,15 +6,15 @@ const xhttp = new XMLHttpRequest()
 
 //FUNZIONI
 function addFile(){
-    console.log('Dentro Funzione addFile()')
+    //console.log('Dentro Funzione addFile()')
     xhttp.open('GET', 'text.txt', true)
+    xhttp.send()
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             elRisultato.innerHTML = this.responseText
             console.log('Risposta : ' + this.responseText)
         }
     }
-    xhttp.send()
 }
 
 //EVENTI
